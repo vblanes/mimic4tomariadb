@@ -1,4 +1,4 @@
-# Python MIMIC IV/4 builder
+# Python MIMIC IV/4 builder (v0.4)
 
 A python script to copy in the csv files of the MIMIC IV dataset folder and mount the tables into a MariaDB/Mysql database.
 

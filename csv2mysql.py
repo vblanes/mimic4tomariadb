@@ -18,7 +18,7 @@ for f in tqdm(listdir('.')):
         continue
     print(f"Parsing file: {f}")
     table_name = aux[0]
-    chunksize = 400_000
+    chunksize = 1_000_000
     for chunk in pd.read_csv(f, chunksize=chunksize, sep=',', infer_datetime_format=True, low_memory=False):
         chunk_counter += 1
         for col in chunk.columns.values:
@@ -41,9 +41,6 @@ for f in tqdm(listdir('.')):
 
             else:
                 chunk[col] = chunk[col].astype(mimic4_types[table_name][col])
-        # try:
+        
         chunk.to_sql(name=table_name, con=engine,
                      if_exists='append', index=False)
-
-        # except Exception as e:
-        #    print(f"Error processing file: {table_name} in chunk {chunk_counter}: {e}")
