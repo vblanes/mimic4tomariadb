@@ -1,5 +1,4 @@
 *.csv
-set_database.sh
 .vscode
 .vscode/*
 __pycache__
