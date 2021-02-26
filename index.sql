@@ -20,6 +20,8 @@
 -- admissions
 -- -----------
 
+use MIMICIV;
+
 alter table admissions
   add index admissions_idx01 (subject_id,hadm_id),
   add index admissions_idx02 (admittime, dischtime, deathtime),
