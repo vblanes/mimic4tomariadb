@@ -42,5 +42,4 @@ for f in tqdm(listdir('.')):
             else:
                 chunk[col] = chunk[col].astype(mimic4_types[table_name][col])
         
-        chunk.to_sql(name=table_name.upper(), con=engine,
-                     if_exists='append', index=False)
+        chunk.to_sql(name=table_name, con=engine, if_exists='append', index=False)
